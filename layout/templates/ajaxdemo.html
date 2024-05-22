@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button id="ajax-button">Get Data</button>
+
+<div id="ajax-response" style="background-color: black; color:white;"></div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $('#ajax-button').click(function(){
+            
+            $.ajax({
+                type:"GET",
+                url:"/gdata",
+                success:function(res){
+                    $('#ajax-response').text(res.message)
+                }
+
+            })
+        })
+    })
+</script>
